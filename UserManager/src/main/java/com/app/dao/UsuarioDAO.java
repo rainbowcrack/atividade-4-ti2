@@ -67,26 +67,26 @@ public class UsuarioDAO implements AutoCloseable {
                 u.setId(rs.getInt("id"));
                 u.setNome(rs.getString("nome"));
                 u.setEmail(rs.getString("email"));
-                u.setSenha(rs.getString("senha")); // Não precisa hashear a senha ao listar
+                u.setSenha(rs.getString("senha")); 
                 lista.add(u);
             }
         }
         return lista;
     }
 
-    // Método para editar o usuário
+    // Metodo para editar o usuário
     public void editarUsuario(Usuario usuario) throws SQLException {
         String sql = "UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getEmail());
-            stmt.setString(3, BCrypt.hashpw(usuario.getSenha(), BCrypt.gensalt())); // Atualiza a senha criptografada
+            stmt.setString(3, BCrypt.hashpw(usuario.getSenha(), BCrypt.gensalt())); // Atualiza para senha criptografada
             stmt.setInt(4, usuario.getId());
             stmt.executeUpdate();
         }
     }
 
-    // Método para excluir usuário
+    // Metodo para excluir usuario
     public void excluirUsuario(int id) throws SQLException {
         String sql = "DELETE FROM usuarios WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {

@@ -14,11 +14,26 @@
     </properties>
 
     <dependencies>
-        <!-- Dependências do seu projeto -->
+
+        <!-- Hash de senhas -->
         <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
+        </dependency>
+
+        <!-- Microframework web -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>2.9.4</version>
+        </dependency>
+
+        <!-- Templates HTML com Velocity (tempo real) -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-template-velocity</artifactId>
+            <version>2.7.1</version>
         </dependency>
     </dependencies>
 </project>
