@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Izabel Chaves">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Dashboard de Análise</title>
+</head>
+<body>
+    <canvas id="bgCanvas"></canvas>
+
+    <header class="header">
+        <div class="logo"> Análise de Segurança</div>
+        <form class="search-form">
+            <input type="text" placeholder="Digite o domínio ou URL..." required>
+            <button type="submit">Buscar</button>
+        </form>
+    </header>
+
+    <main class="dashboard">
+        <section class="table-section">
+            <h2>Resultados da Análise</h2>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Domínio</th>
+                        <th>Status</th>
+                        <th>Classificação</th>
+                        <th>Riscos Identificados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas serão adicionadas dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../assets/js/background.js"></script>
+</body>
+</html>
